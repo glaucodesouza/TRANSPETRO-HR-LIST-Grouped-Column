@@ -13,7 +13,7 @@ sap.ui.define([
 ], function (Controller, Filter, FilterOperator, Sorter, MessageBox, fioriLibrary, JSONModel, MessageToast, formatter) {
     "use strict";
 
-    // const LayoutType = fioriLibrary.LayoutType;
+    const LayoutType = fioriLibrary.LayoutType;
 
     var oModelPeriodos;
     var oModelOcorrencias;

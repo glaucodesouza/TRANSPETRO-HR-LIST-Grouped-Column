@@ -1,4 +1,4 @@
-<mvc:View  controllerName="zhr.panellistgroup.controller.List"
+<mvc:View  controllerName="zhr.panellistgroup.controller.Detail"
         displayBlock="true"
         height="100%"
 		xmlns="sap.uxap"

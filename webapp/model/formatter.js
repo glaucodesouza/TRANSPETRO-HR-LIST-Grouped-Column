@@ -32,7 +32,7 @@ sap.ui.define([
         formatTimeFromMs: function (horaDoSAP) {
             
             // Caso receba do botão Criar Registro
-            if (!horaDoSAP.ms) {
+            if (!horaDoSAP?.ms) {
                 return horaDoSAP; // Retorna o valor original se não for um objeto com a propriedade "ms"
             }
             

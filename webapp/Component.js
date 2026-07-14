@@ -42,9 +42,9 @@ sap.ui.define([
                     layout: LayoutType.OneColumn,
                     actionButtonsInfo: {
                         midColumn: {
-                            fullScreen: null,
-                            exitFullScreen: null,
-                            closeColumn: null
+                            fullScreen: true,
+                            exitFullScreen: true,
+                            closeColumn: true
                         },
                         endColumn: {
                             fullScreen: null,

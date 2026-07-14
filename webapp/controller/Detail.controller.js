@@ -46,7 +46,7 @@ sap.ui.define([
 
         handleClose: function () {
             this.getOwnerComponent()
-                .getModel()
+                .getModel("layout")
                 .setProperty("/layout", LayoutType.OneColumn);
 
             this.oRouter.navTo("master");

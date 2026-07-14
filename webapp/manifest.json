@@ -97,7 +97,7 @@
         "viewPath": "zhr.panellistgroup.view",
         "controlAggregation": "beginColumnPages",
         "controlId": "zhrpanellistgroup",
-        "clearControlAggregation": false
+        "clearControlAggregation": true
       },
       "routes": [
         {

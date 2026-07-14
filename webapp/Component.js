@@ -5,14 +5,22 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "zhr/panellistgroup/model/models"
+        "zhr/panellistgroup/model/models",
+        "sap/f/library",
+        "sap/f/FlexibleColumnLayoutSemanticHelper",
+        "sap/ui/model/json/JSONModel"
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models, fioriLibrary, FlexibleColumnLayoutSemanticHelper, JSONModel) {
         "use strict";
+
+        const LayoutType = fioriLibrary.LayoutType;
 
         return UIComponent.extend("zhr.panellistgroup.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json",
+                interfaces: [
+                    "sap.ui.core.IAsyncContentCreation"
+                ]
             },
 
             /**
@@ -29,6 +37,32 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                const oLayoutModel = new JSONModel({
+                    layout: LayoutType.OneColumn,
+                    actionButtonsInfo: {
+                        midColumn: {
+                            fullScreen: null,
+                            exitFullScreen: null,
+                            closeColumn: null
+                        },
+                        endColumn: {
+                            fullScreen: null,
+                            exitFullScreen: null,
+                            closeColumn: null
+                        }
+                    }
+                });
+
+                this.setModel(oLayoutModel, "layout");
+            },
+
+            getHelper() {
+                const oFCL = this.getRootControl().byId("zhrpanellistgroup");
+
+                return FlexibleColumnLayoutSemanticHelper.getInstanceFor(oFCL, {
+                    defaultTwoColumnLayoutType: LayoutType.TwoColumnsMidExpanded
+                });
             }
         });
     }
